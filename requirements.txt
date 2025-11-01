@@ -3,3 +3,5 @@ beautifulsoup4
 newspaper3k
 python-dateutil
 feedparser
+lxml==4.9.3
+lxml_html_clean
