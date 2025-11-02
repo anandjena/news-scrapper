@@ -3,6 +3,7 @@ name: Run News Scraper
 on:
   schedule:
     - cron: "0 2 * * *"    # 7:30 AM IST  (2:00 UTC)
+    - cron: "0 5 * * *"    # 10:30 AM IST  (2:00 UTC)
     - cron: "0 9 * * *"    # 2:30 PM IST  (9:00 UTC)
     - cron: "0 15 * * *"   # 8:30 PM IST  (15:00 UTC)
   workflow_dispatch:       # Allow manual run
