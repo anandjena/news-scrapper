@@ -1,0 +1,23 @@
+name: Show Time (UTC vs Local)
+
+on:
+  schedule:
+    - cron: "0 2 * * *"    # 7:30 AM IST (runs at 02:00 UTC)
+    - cron: "0 9 * * *"    # 2:30 PM IST (runs at 09:00 UTC)
+    - cron: "0 15 * * *"   # 8:30 PM IST (runs at 15:00 UTC)
+  workflow_dispatch:        # allows manual run
+
+jobs:
+  show-time:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Show time
+        run: |
+          echo "=== UTC Time ==="
+          date -u
+          echo ""
+          echo "=== Local Runner Time ==="
+          date
+          echo ""
+          echo "=== IST Time (Asia/Kolkata) ==="
+          TZ='Asia/Kolkata' date
