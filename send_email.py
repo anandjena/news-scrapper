@@ -15,9 +15,9 @@ def send_email_with_attachment():
     msg["To"] = os.environ["RECIPIENT_EMAIL"]
 
     # ✅ Add CC recipients if provided
-    cc_emails = os.environ.get("CC_EMAIL")
-    if cc_emails:
-        msg["Cc"] = cc_emails
+    # cc_emails = os.environ.get("CC_EMAIL")
+    # if cc_emails:
+    #     msg["Cc"] = cc_emails
 
     msg.set_content("Attached is the latest news CSV file from the scraper.")
 
