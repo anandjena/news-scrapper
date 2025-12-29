@@ -27,8 +27,8 @@ def send_email_with_attachment():
 
     # Combine all recipients (To + Cc)
     to_addrs = [addr.strip() for addr in msg["To"].split(",")]
-    if cc_emails:
-        to_addrs += [addr.strip() for addr in cc_emails.split(",")]
+    # if cc_emails:
+    #     to_addrs += [addr.strip() for addr in cc_emails.split(",")]
 
     # Send email via Gmail SMTP
     with smtplib.SMTP_SSL("smtp.gmail.com", 465) as smtp:
