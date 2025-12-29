@@ -15,10 +15,7 @@ def send_email_with_attachment():
     msg["To"] = os.environ["RECIPIENT_EMAIL"]
 
     # ✅ Add CC recipients if provided
-    # cc_emails = os.environ.get("CC_EMAIL")
-    # if cc_emails:
-    #     msg["Cc"] = cc_emails
-
+  
     msg.set_content("Attached is the latest news CSV file from the scraper.")
 
     # Attach the CSV file
@@ -27,9 +24,7 @@ def send_email_with_attachment():
 
     # Combine all recipients (To + Cc)
     to_addrs = [addr.strip() for addr in msg["To"].split(",")]
-    # if cc_emails:
-    #     to_addrs += [addr.strip() for addr in cc_emails.split(",")]
-
+    
     # Send email via Gmail SMTP
     with smtplib.SMTP_SSL("smtp.gmail.com", 465) as smtp:
         smtp.login(os.environ["EMAIL_USER"], os.environ["EMAIL_PASS"])
